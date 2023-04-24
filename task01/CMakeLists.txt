@@ -47,3 +47,5 @@ target_link_libraries(${PROJECT_NAME}
 GET_TARGET_PROPERTY(GLFW_INCLUDE_DIR
   glfw INTERFACE_INCLUDE_DIRECTORIES)
 message(STATUS "glfw include directory: ${GLFW_INCLUDE_DIR}")
+
+set_target_properties(${PROJECT_NAME} PROPERTIES COMPILE_FLAGS "/EHsc")

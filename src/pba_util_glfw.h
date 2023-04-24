@@ -1,7 +1,7 @@
 #ifndef PBA_GLFW_UTIL_H_
 #define PBA_GLFW_UTIL_H_
 
-#include <GLFW/glfw3.h>
+#include "../external/glfwlib/include/GLFW/glfw3.h"
 
 namespace pba {
 

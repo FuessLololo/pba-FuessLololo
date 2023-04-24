@@ -7,8 +7,8 @@
 #include <cstdlib>
 #include <vector>
 #define GL_SILENCE_DEPRECATION
-#include <GLFW/glfw3.h>
-#include <Eigen/Dense>
+#include "../external/glfwlib/include/GLFW/glfw3.h"
+#include "../external/eigen/Eigen/Dense"
 
 #include "../src/pba_util_glfw.h"
 #include "../src/pba_util_gl.h"
@@ -40,8 +40,8 @@ Eigen::Vector2f time_integration_implicit(const Eigen::Vector2f& p0, float dt){
   Eigen::Matrix2f A;
   Eigen::Vector2f b;
   // modify the following two lines to implement implicit time integration
-  A << 1.f, 0.f, 0.f, 1.f;
-  b << r0, v0;
+  A << 1.f, -dt, 0.f, 1.f;
+  b << r0, v0 + dt * f0;
   return A.inverse()*b;
 }
 
