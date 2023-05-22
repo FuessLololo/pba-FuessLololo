@@ -29,6 +29,8 @@ void wdw_spring_3d(
   w = 0.5f * stiffness * C * C; // Hooke's law. energy is square of length difference W=1/2*k*C*C
 
   // write a few lines of code below to compute the gradient of elastic energy of this spring
+  dw[0] = stiffness * C * (node2xyz[0] - node2xyz[1]) / length;
+  dw[1] = stiffness * C * (node2xyz[1] - node2xyz[0]) / length;
   // with respect to the positions of the two end points.
 }
 
